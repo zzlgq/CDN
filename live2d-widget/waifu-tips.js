@@ -42,7 +42,7 @@ function loadWidget(config) {
 	let userAction = false,
 		userActionTimer,
 		messageTimer,
-		messageArray = ["好久不见，日子过得好快呢……", "禽兽！小刘你都多久没理人家了呀，嘤嘤嘤～", "嗨小刘在干什么呀～快来逗我玩吧！", "是不是又想被我掐的发紫呀！", "记得把小家加入 Adblock 白名单哦！"];
+		messageArray = ["小渣渣好久不见，日子过得好快呢……", "禽兽！小刘你都多久没理人家了呀，嘤嘤嘤～", "嗨小刘在干什么呀～快来逗我玩吧！", "是不是又想被我掐的发紫呀！", "记得把小家加入 Adblock 白名单哦！"];
 	window.addEventListener("mousemove", () => userAction = true);
 	window.addEventListener("keydown", () => userAction = true);
 	setInterval(() => {
@@ -81,7 +81,7 @@ function loadWidget(config) {
 		});
 		document.querySelector("#waifu-tool .fa-times").addEventListener("click", () => {
 			localStorage.setItem("waifu-display", Date.now());
-			showMessage("愿你有一天能与重要的人重逢。", 2000, 11);
+			showMessage("小刘愿你有一天能与重要的人重逢。", 2000, 11);
 			document.getElementById("waifu").style.bottom = "-500px";
 			setTimeout(() => {
 				document.getElementById("waifu").style.display = "none";
@@ -111,8 +111,8 @@ function loadWidget(config) {
 			else if (now > 13 && now <= 17) text = "午后很容易犯困呢，小刘有没有去跑步呀，一起打乒乓球吧！";
 			else if (now > 17 && now <= 19) text = "傍晚了！窗外夕阳的景色很美丽呢，最美不过夕阳红，小刘你想我嘛～";
 			else if (now > 19 && now <= 21) text = "小刘晚上好，今天过得怎么样？";
-			else if (now > 21 && now <= 23) text = ["已经这么晚了呀，早点休息吧，晚安～", "深夜时要爱护眼睛呀！"];
-			else text = "你是夜猫子呀？这么晚还不睡觉，明天起的来嘛？";
+			else if (now > 21 && now <= 23) text = ["已经这么晚了呀，早点休息吧，晚安小刘～", "早点睡觉哦小渣渣，不然又得打瞌睡了你！"];
+			else text = "小渣渣你是夜猫子呀？这么晚还不睡觉，明天起的来嘛？";
 		} else if (document.referrer !== "") {
 			const referrer = new URL(document.referrer),
 				domain = referrer.hostname.split(".")[1];
@@ -227,14 +227,14 @@ function loadWidget(config) {
 			if (!modelList) await loadModelList();
 			const target = randomSelection(modelList.models[modelId]);
 			loadlive2d("live2d", `${cdnPath}model/${target}/index.json`);
-			showMessage("我的新衣服好看嘛？", 4000, 10);
+			showMessage("小刘我的新衣服好看嘛？", 4000, 10);
 		} else {
 			// 可选 "rand"(随机), "switch"(顺序)
 			fetch(`${apiPath}rand_textures/?id=${modelId}-${modelTexturesId}`)
 				.then(response => response.json())
 				.then(result => {
 					if (result.textures.id === 1 && (modelTexturesId === 1 || modelTexturesId === 0)) showMessage("我还没有其他衣服呢！", 4000, 10);
-					else loadModel(modelId, result.textures.id, "我的新衣服好看嘛？");
+					else loadModel(modelId, result.textures.id, "小刘我的新衣服好看嘛？");
 				});
 		}
 	}
