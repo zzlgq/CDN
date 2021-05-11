@@ -42,7 +42,7 @@ function loadWidget(config) {
 	let userAction = false,
 		userActionTimer,
 		messageTimer,
-		messageArray = ["小渣渣好久不见，日子过得好快呢……", "禽兽！小刘你都多久没理人家了呀，嘤嘤嘤～", "嗨小刘在干什么呀～快来逗我玩吧！", "是不是又想被我掐的发紫呀！", "记得把小家加入 Adblock 白名单哦！"];
+		messageArray = ["小渣渣好久不见，日子过得好快呢……", "衣冠禽兽！小刘你都多久没理人家了呀，嘤嘤嘤～", "好好保护眼睛，现在不用献给斗智了，自己好好留着", "嗨小刘在干什么呀～快来逗我玩吧！", "是不是又想被我掐的发紫呀！", "别这样等，显得很卑微，不是你想看到的，也不是我想看到的！"];
 	window.addEventListener("mousemove", () => userAction = true);
 	window.addEventListener("keydown", () => userAction = true);
 	setInterval(() => {
@@ -111,7 +111,7 @@ function loadWidget(config) {
 			else if (now > 13 && now <= 17) text = "午后很容易犯困呢，小刘有没有去跑步呀，一起打乒乓球吧！";
 			else if (now > 17 && now <= 19) text = "傍晚了！窗外夕阳的景色很美丽呢，最美不过夕阳红，小刘你想我嘛～";
 			else if (now > 19 && now <= 21) text = "小刘晚上好，今天过得怎么样？";
-			else if (now > 21 && now <= 23) text = ["已经这么晚了呀，早点休息吧，晚安小刘～", "早点睡觉哦小渣渣，不然又得打瞌睡了你！"];
+			else if (now > 21 && now <= 23) text = ["已经这么晚了呀，早点休息吧，晚安小刘～", "早点睡觉哦小渣渣，不然又得打瞌睡了你！", "小刘我到了，你路上注意点，听到没！"];
 			else text = "小渣渣你是夜猫子呀？这么晚还不睡觉，明天起的来嘛？";
 		} else if (document.referrer !== "") {
 			const referrer = new URL(document.referrer),
